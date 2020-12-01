@@ -1,0 +1,100 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<table class="ta">
+        <caption class="highlight">Player 1</caption>
+        <tr>
+          <td data-id="1">01</td>
+          <td  ></td>
+          <td data-id="25">25</td>
+          <td data-id="33">33</td>
+          <td></td>
+          <td data-id="57">57</td>
+          <td></td>
+          <td data-id="77">77</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td data-id="1">01</td>
+          <td  ></td>
+          <td data-id="25">25</td>
+          <td data-id="33">33</td>
+          <td></td>
+          <td data-id="57">57</td>
+          <td></td>
+          <td data-id="77">77</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td data-id="1">01</td>
+          <td  ></td>
+          <td data-id="25">25</td>
+          <td data-id="33">33</td>
+          <td></td>
+          <td data-id="57">57</td>
+          <td></td>
+          <td data-id="77">77</td>
+          <td></td>
+        </tr>
+        
+      </table>
+<table>
+<tr>
+<td data-id="2">02</td>
+</tr>
+</table>
+<table>
+<tr>
+<td data-id="2">02</td>
+</tr>
+</table>
+<button>Generate</button>
+<h1 id="hea"></h1>
+
+    <script>
+        let btn = document.querySelector('button');
+        let output = document.querySelector('h1');
+        
+        function getRandomNumber(min,max) {
+        let step1 = max-min +1;
+        let step2 = Math.random() * step1;
+        let result = Math.floor(step2) + min;
+        return result;
+        }
+        
+        function createArrayofNumbers(start,end) {
+        let myArray = [];
+        
+        for(let i= start;i<= end;i++) {
+        myArray.push(i);
+        }
+        return myArray;
+        }
+        
+        let numbersArray= createArrayofNumbers(1,77);
+        console.log(numbersArray);
+        
+        btn.addEventListener('click', () =>{
+        if(numbersArray.length ==0) { output.innerText = "No more Numbers";
+        return;}
+        let randomIndex = getRandomNumber(0,numbersArray.length-1);
+        let randomNumbers= numbersArray[randomIndex];
+        numbersArray.splice(randomIndex, 1);
+        output.innerText = randomNumbers;
+        current = randomNumbers;
+        let element = document.querySelectorAll("[data-id='" + current + "']");
+    document.getElementById("hea").innerHTML=current;
+
+for(var i=0; i<element.length;i++)
+{
+element[i].style.color = "yellow";
+}
+        }
+        
+        );
+        </script>
+</body>
+</html>

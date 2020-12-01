@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<p data-id="1">01</p>
+<p data-id="2">02</p>
+<p data-id="1">01</p>
+<p data-id="2">02</p><p data-id="1">01</p>
+<p data-id="2">02</p><p data-id="1">01</p>
+<p data-id="2">02</p>
+
+<script>
+current = Math.floor((Math.random() * 5) + 1);
+document.write(current);
+    let element = document.querySelectorAll("[data-id='" + current + "']");
+
+for(var i=0; i<element.length;i++)
+{
+element[i].style.color = "blue"
+}
+
+</script>
+
+</body>
+</html> 
